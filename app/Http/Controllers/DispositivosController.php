@@ -53,4 +53,21 @@ class DispositivosController extends Controller
 
         return redirect()->route('dispositivos')->with('success', 'Dispositivo insertado correctamente.');
     }
+
+    public function eliminarDispositivo(Dispositivo $dispositivo)
+    {
+        $dispositivo->delete();
+
+        return redirect()->route('dispositivos')->with('success','Dispositivo eliminado correctamente');
+    }
+
+    public function verFormularioEditar(Request $request)
+    {
+
+    }
+
+    public function editarDispositivo(Request $request)
+    {
+
+    }
 }

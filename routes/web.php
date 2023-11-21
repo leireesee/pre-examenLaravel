@@ -51,10 +51,23 @@ Route::get('/nuevoDispositivo', [DispositivosController::class, 'verFormulario']
 //añadir datos
 Route::post('/anadirDispositivo', [DispositivosController::class, 'anadirDispositivo'])->middleware(['auth', 'verified'])->name('anadirDispositivo');
 
+
+//ELIMINAR DISPOSITIVO
+Route::post('/eliminarDispositivo/{{ $dispositivo }}', [DispositivosController::class, 'eliminarDispositivo'])->name('eliminarDispositivo');
+
+//MODIFICAR DISPOSITIVO
+//ver formulario
+
+//modificar datos
+
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
 
 require __DIR__.'/auth.php';

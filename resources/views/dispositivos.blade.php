@@ -14,7 +14,7 @@
     @foreach ($dispositivos as $dispositivo)
     <div class="mt-10">
     <div class="grid grid-cols-3 md:grid-cols-2 gap-6 lg:gap-8">
-        <a href="#" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50
+        <a href="" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50
         via-transparent
         dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex
         motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2">
@@ -39,7 +39,17 @@
 
     </div>
     </a>
+    
+    
     </div>
+    <div>
+    <!-- Eliminar -->
+    <button href="route('eliminarDispositivo')" style="z-index: 1000000; background-color: black; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px;">Eliminar ></button>
+
+    <!-- Modificar -->
+    <button href="modificarDispositivo" style="z-index: 1000000; background-color: #1536a3; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px; margin-left: 5px">Modificar ></button>
+    </div>
+    
     <br>
     @endforeach
 
