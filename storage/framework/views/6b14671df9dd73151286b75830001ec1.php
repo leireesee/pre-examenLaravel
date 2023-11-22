@@ -52,12 +52,21 @@
     
     
     </div>
-    <div>
+    <div style="margin-top: 20px">
     <!-- Eliminar -->
-    <button href="route('eliminarDispositivo')" style="z-index: 1000000; background-color: black; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px;">Eliminar ></button>
-
+    
+    <form action="<?php echo e(route('eliminarDispositivo', ['dispositivo' => $dispositivo])); ?>" method="post">
+        <?php echo csrf_field(); ?>
+        
+        <button type="submit" style="z-index: 1000000; background-color: black; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px;">
+            Eliminar >
+        </button>
+    </form>
     <!-- Modificar -->
-    <button href="modificarDispositivo" style="z-index: 1000000; background-color: #1536a3; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px; margin-left: 5px">Modificar ></button>
+
+    
+
+    <a href="modificarDispositivo" style="z-index: 1000000; background-color: #1536a3; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px; margin-left: 5px">Modificar ></a>
     </div>
     
     <br>

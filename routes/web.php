@@ -53,8 +53,9 @@ Route::post('/anadirDispositivo', [DispositivosController::class, 'anadirDisposi
 
 
 //ELIMINAR DISPOSITIVO
-Route::post('/eliminarDispositivo/{{ $dispositivo }}', [DispositivosController::class, 'eliminarDispositivo'])->name('eliminarDispositivo');
+// Route::delete('/dispositivos/{dispositivo?}', [DispositivosController::class, 'eliminarDispositivo'])->name('eliminarDispositivo');
 
+Route::post('/dispositivos/{dispositivo}', [DispositivosController::class, 'eliminarDispositivo'])->name('dispositivo.eliminar');
 //MODIFICAR DISPOSITIVO
 //ver formulario
 

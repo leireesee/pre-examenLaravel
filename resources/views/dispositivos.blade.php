@@ -42,12 +42,24 @@
     
     
     </div>
-    <div>
+    <div style="margin-top: 20px">
     <!-- Eliminar -->
-    <button href="route('eliminarDispositivo')" style="z-index: 1000000; background-color: black; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px;">Eliminar ></button>
-
+    {{-- route('eliminarDispositivo', ['dispositivo' => $dispositivo])  --}}
+    <form action="{{ route('eliminarDispositivo', ['dispositivo' => $dispositivo]) }}" method="post">
+        @csrf
+        {{-- @method('DELETE') --}}
+        <button type="submit" style="z-index: 1000000; background-color: black; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px;">
+            Eliminar >
+        </button>
+    </form>
     <!-- Modificar -->
-    <button href="modificarDispositivo" style="z-index: 1000000; background-color: #1536a3; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px; margin-left: 5px">Modificar ></button>
+
+    {{-- <form action="{{ route('dispositivo.eliminar', ['dispositivo' => $dispositivo]) }}">
+        @csrf
+        <input type="submit" value="Eliminar >">
+    </form> --}}
+
+    <a href="modificarDispositivo" style="z-index: 1000000; background-color: #1536a3; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px; margin-left: 5px">Modificar ></a>
     </div>
     
     <br>
