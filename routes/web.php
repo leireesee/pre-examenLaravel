@@ -64,7 +64,7 @@ Route::delete('/eliminarDispositivos/{dispositivo}', [DispositivosController::cl
 Route::get('/modificarDispositivo/{dispositivo}', [DispositivosController::class, 'verFormularioEditar'])->middleware(['auth', 'verified'])->name('modificarDispositivo');
 
 //modificar datos
-Route::post('/editarDispositivo', [DispositivosController::class, 'editarDispositivo'])->middleware(['auth', 'verified'])->name('editarDispositivo');
+Route::post('/editarDispositivo/{dispositivo}', [DispositivosController::class, 'editarDispositivo'])->middleware(['auth', 'verified'])->name('editarDispositivo');
 
 
 

@@ -67,16 +67,15 @@ class DispositivosController extends Controller
         return view('modificarDispositivo')->with('dispositivo', $dispositivo);
     }
 
-    public function editarDispositivo(Request $request)
+    public function editarDispositivo(Request $request, Dispositivo $dispositivo)
     {
-        echo $request->id;
-        
-        Dispositivo::where('id', $request->id)
-            ->update([
-                'tipo' => $request->input('tipo'),
-                'modelo' => $request->input ('modelo'),
-                'precio' => $request->input ('precio'),
-            ]);
+
+        $dispositivo->tipo = $request->input('tipo');
+        $dispositivo->modelo = $request->input('modelo');
+        $dispositivo->precio = $request->input('precio');
+
+        $dispositivo->save();
+
 
         return redirect()->route('dispositivos')->with('success','Dispositivo modificado correctamente');
     }
