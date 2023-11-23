@@ -68,7 +68,7 @@
         </form> --}}
 
         {{-- {{ route('modificarDispositivo', $dispositivo) }} --}}
-        {{-- <a href="{{ route('modificarDispositivo', $dispositivo) }}" style="z-index: 1000000; background-color: #1536a3; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px; margin-left: 5px">Modificar ></a> --}}
+        <a href="{{ route('modificarDispositivo', $dispositivo) }}" style="z-index: 1000000; background-color: #1536a3; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px; margin-left: 5px">Modificar</a>
         </div>
         
         <br>
