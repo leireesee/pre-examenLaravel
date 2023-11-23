@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DispositivosController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Dispositivo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -53,12 +54,19 @@ Route::post('/anadirDispositivo', [DispositivosController::class, 'anadirDisposi
 
 
 //ELIMINAR DISPOSITIVO
-// Route::delete('/dispositivos/{dispositivo?}', [DispositivosController::class, 'eliminarDispositivo'])->name('eliminarDispositivo');
+Route::delete('/eliminarDispositivos/{dispositivo}', [DispositivosController::class, 'eliminarDispositivo'])->name('eliminarDispositivo');
 
-Route::post('/dispositivos/{dispositivo}', [DispositivosController::class, 'eliminarDispositivo'])->name('dispositivo.eliminar');
+// Route::delete('/eliminarDispositivos/{dispositivo}', function(Dispositivo $dispositivo) {
+//     $dispositivo->delete();
+//     return redirect()->route('dispositivos')->with('success','Dispositivo eliminado correctamente');
+// })->name('eliminarDispositivo');
+
+// Route::post('/dispositivos/{dispositivo}', [DispositivosController::class, 'eliminarDispositivo'])->name('dispositivo.eliminar');
+
+
 //MODIFICAR DISPOSITIVO
 //ver formulario
-
+Route::get('/modificarDispositivo/{dispositivo}', [DispositivosController::class, 'verFormularioEditar'])->middleware(['auth', 'verified'])->name('modificarDispositivo');
 //modificar datos
 
 

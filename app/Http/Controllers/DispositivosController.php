@@ -15,7 +15,7 @@ class DispositivosController extends Controller
     {
         //$dispositivos = DB::table('dispositivos')->get();
 
-        $dispositivos = Dispositivo::select('tipo', 'modelo', 'precio', 'url')->get();
+        $dispositivos = Dispositivo::select('id','tipo', 'modelo', 'precio', 'url')->get();
 
         return view('dispositivos', ['dispositivos' => $dispositivos]);
     }
@@ -56,14 +56,15 @@ class DispositivosController extends Controller
 
     public function eliminarDispositivo(Dispositivo $dispositivo)
     {
+      
         $dispositivo->delete();
 
         return redirect()->route('dispositivos')->with('success','Dispositivo eliminado correctamente');
     }
 
-    public function verFormularioEditar(Request $request)
-    {
-
+    public function verFormularioEditar(Dispositivo $dispositivo)
+    {   
+        return view('modificarDispositivo')->with('dispositivo', $dispositivo);
     }
 
     public function editarDispositivo(Request $request)

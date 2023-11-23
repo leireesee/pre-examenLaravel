@@ -50,26 +50,29 @@
     </div>
     </a>
     
-    
-    </div>
-    <div style="margin-top: 20px">
-    <!-- Eliminar -->
-    
-    <form action="<?php echo e(route('eliminarDispositivo', ['dispositivo' => $dispositivo])); ?>" method="post">
-        <?php echo csrf_field(); ?>
         
-        <button type="submit" style="z-index: 1000000; background-color: black; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px;">
-            Eliminar >
-        </button>
-    </form>
-    <!-- Modificar -->
+        <form action=<?php echo e(route('eliminarDispositivo', $dispositivo)); ?> method="POST">
+            <?php echo csrf_field(); ?>
+            <?php echo method_field('DELETE'); ?>
+            <button type="submit" style="z-index: 1000000; background-color: black; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px;">
+                Eliminar >
+            </button>
+        </form>
+        
+        </div>
+        <div style="margin-top: 20px">
+        <!-- Eliminar -->
+        
+        
+        <!-- Modificar -->
 
-    
+        
 
-    <a href="modificarDispositivo" style="z-index: 1000000; background-color: #1536a3; color: white; padding: 10px; border-radius: 10px; margin-top: 10px;margin-bottom: 30px; margin-left: 5px">Modificar ></a>
-    </div>
-    
-    <br>
+        
+        
+        </div>
+        
+        <br>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
